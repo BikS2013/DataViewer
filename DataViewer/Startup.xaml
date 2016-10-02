@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataViewer;assembly=DataViewer"
+             x:Class="DataViewer.Startup">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ReverseBoolConverter x:Key="reverseBoolConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20"/>
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <Grid >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+        <RowDefinition Height="*" ></RowDefinition>
+        <RowDefinition Height="Auto" ></RowDefinition>
+      </Grid.RowDefinitions>
+      <Label Grid.Row="4" Text="Enter your Password:" />
+      <Entry Grid.Row="5" x:Name="password" Text="nothing" IsPassword="true" />
+      <Button Grid.Row="6" x:Name="loadButton" Text="Read Data" Clicked="OnReadData"></Button>
+      <Label Grid.Row="7" Text="{Binding Data}"
+             HorizontalTextAlignment="Center" TextColor="Blue" BackgroundColor="White" 
+             IsVisible="{Binding IsEditorVisible, Converter={StaticResource reverseBoolConverter}}"/>
+      <Editor Grid.Row="7" x:Name="data" Text="{Binding Data}" IsVisible="{Binding IsEditorVisible}"/>
+      <Grid Grid.Row="8">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Switch Grid.Column="0" IsToggled="{Binding IsEditorVisible}" ></Switch>
+        <Label Grid.Column="1" FontSize="16" VerticalTextAlignment="Center">test text</Label>
+        <Button Grid.Column="3" x:Name="editButton" Text="Edit" Clicked="OnEdit"
+                IsVisible="{Binding IsEditorVisible, Converter={StaticResource reverseBoolConverter}}"/>
+        <Button Grid.Column="3" x:Name="saveButton" Text="Save" Clicked="OnSave"
+                IsVisible="{Binding IsEditorVisible}" />
+      </Grid>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
