@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DataViewer.App.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>DataViewerAppiOS</AssemblyName>
+    <AssemblyName>DataViewer.App.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

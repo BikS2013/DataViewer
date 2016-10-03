@@ -128,9 +128,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataViewer.App\DataViewer.App.csproj">
-      <Project>{d5ae80d2-1741-400a-acc1-a645f5456e73}</Project>
-      <Name>DataViewer.App</Name>
+    <ProjectReference Include="..\..\DataViewer\DataViewer.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>DataViewer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

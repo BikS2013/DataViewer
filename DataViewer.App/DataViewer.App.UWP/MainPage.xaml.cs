@@ -21,7 +21,7 @@ namespace DataViewer.App.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new DataViewer.App.App());
+            LoadApplication(new ViewerApp());
         }
     }
 }
