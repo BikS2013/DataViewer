@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="DataSpace.cs" />
     <Compile Include="DataViewer.cs" />
+    <Compile Include="IFileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseBoolConverter.cs" />
     <Compile Include="Startup.xaml.cs">
